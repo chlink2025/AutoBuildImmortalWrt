@@ -89,7 +89,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ImmortalWrt-sunxi-cortexa53
-          files: |
-            ${{ github.workspace }}/*.img.gz
-            ${{ github.workspace }}/*.sha256
+          path: ${{ github.workspace }}
           
