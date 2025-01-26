@@ -86,14 +86,10 @@ jobs:
           fi
 
       - name: Upload ImmortWrt as release assets
-        uses: softprops/action-gh-release@v2.2.1
+        uses: actions/upload-artifact@v3
         with:
-          tag_name: Autobuild-sunxi-cortexa53
           name: ImmortalWrt-sunxi-cortexa53
-          body_path: ${{ github.workspace }}/sunxi-cortexa53/info.md
           files: |
             ${{ github.workspace }}/*.img.gz
             ${{ github.workspace }}/*.sha256
-          token: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
